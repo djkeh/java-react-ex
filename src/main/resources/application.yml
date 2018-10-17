@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/uno?zeroDateTimeBehavior=convertToNull&autoReconnect=false&useUnicode=true&characterEncoding=UTF-8&useSSL=false"
+    username: root
+    password: password
+  jpa:
+    database: mysql
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  data:
+    rest:
+      base-path: "/api"
+      default-media-type: "application/hal+json;charset=UTF-8"
+      detection-strategy: all
+      default-page-size: 10
+      max-page-size: 1000
+  devtools:
+    livereload:
+      enabled: true
+      port: 35729
+    restart:
+      enabled: true
+server:
+  port: 8085
+management:
+  server:
+    address: localhost
+    port: 8085
